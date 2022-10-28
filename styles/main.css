@@ -1,77 +1,121 @@
 body {
-  background-color: #4b4b4b;
+  height: 100vh;
+  background-color: #3DC9F3;
 }
 
-.sidebar {
-  background-color: #000;
-  height: 80vh;
-  width: 600px;
-  position: relative;
-  margin-top: 30px;
-  left: 50px;
-  -webkit-transform: translateX(0px);
-          transform: translateX(0px);
-  -webkit-transition: -webkit-transform 0.5s ease-in-out;
-  transition: -webkit-transform 0.5s ease-in-out;
-  transition: transform 0.5s ease-in-out;
-  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+.container {
+  height: 100%;
 }
-
-.sidebar ul {
-  list-style-type: none;
-}
-
-.sidebar li {
-  text-align: center;
-  padding-top: 100px;
-}
-
-.sidebar a {
-  text-decoration: none;
-  color: #fff;
-  font-size: xx-large;
-}
-
-.sidebar .active {
-  color: #be4417;
-}
-
-.nav-icon {
+.container .sun {
   position: absolute;
-  cursor: pointer;
-  height: 26px;
-  width: 28px;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background-color: #F9C025;
   top: 20px;
-  right: 10px;
+  left: 40px;
 }
-
-.nav-icon .nav-part {
+.container .slidein {
+  transform: translateX(-220px);
+  -webkit-animation: slidein 3s ease-out forwards;
+          animation: slidein 3s ease-out forwards;
+}
+@-webkit-keyframes slidein {
+  100% {
+    transform: translate(0);
+  }
+}
+@keyframes slidein {
+  100% {
+    transform: translate(0);
+  }
+}
+.container .flower {
   position: absolute;
-  width: 26px;
-  height: 3px;
-  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  left: 50%;
+  bottom: 0%;
 }
-
-.nav-icon .nav-part::before {
-  position: absolute;
-  width: 26px;
-  height: 3px;
-  content: '';
-  background: #fff;
-  top: 8px;
+.container .flower_head {
+  height: 7rem;
+  width: 7rem;
+  background-color: #a100c2;
+  border-radius: 50%;
 }
-
-.nav-icon .nav-part::after {
-  position: absolute;
-  width: 26px;
-  height: 3px;
-  content: '';
-  background: #fff;
-  top: -8px;
+.container .flower_stem {
+  height: 12rem;
+  width: 0.5rem;
+  max-height: 0;
+  background-color: #18AE00;
 }
-
-input[type="checkbox"]:checked ~ .sidebar {
-  -webkit-transform: translateX(50px);
-          transform: translateX(50px);
+.container .flower_stem::after {
+  content: "";
+  margin-left: 0.5;
+  margin-top: 1rem;
+  width: 3em;
+  height: 3em;
+  display: block;
+  background: #0C8A00;
+  border-radius: 2em 0 2em 0em;
 }
-/*# sourceMappingURL=main.css.map */
+.container .flower .grow-12 {
+  -webkit-animation: grow-12 2s 0.5s ease-in-out forwards;
+          animation: grow-12 2s 0.5s ease-in-out forwards;
+}
+@-webkit-keyframes grow-12 {
+  100% {
+    max-height: 14rem;
+  }
+}
+@keyframes grow-12 {
+  100% {
+    max-height: 14rem;
+  }
+}
+.container .flower .pulse {
+  -webkit-animation: pulse 1s 0.5s ease-in-out infinite alternate;
+          animation: pulse 1s 0.5s ease-in-out infinite alternate;
+}
+@-webkit-keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+.container h1 {
+  padding-top: 20vh;
+  font-size: 8vw;
+  position: relative;
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px hsla(100deg, 0%, 30%, 0.5);
+  z-index: 1000;
+  margin: 0;
+}
+.container .fadein {
+  opacity: 0;
+  -webkit-animation: fadein 1s 2s ease-in forwards;
+          animation: fadein 1s 2s ease-in forwards;
+}
+@-webkit-keyframes fadein {
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadein {
+  100% {
+    opacity: 1;
+  }
+}/*# sourceMappingURL=main.css.map */
