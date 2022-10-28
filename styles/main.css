@@ -1,0 +1,77 @@
+body {
+  background-color: #4b4b4b;
+}
+
+.sidebar {
+  background-color: #000;
+  height: 80vh;
+  width: 600px;
+  position: relative;
+  margin-top: 30px;
+  left: 50px;
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+}
+
+.sidebar ul {
+  list-style-type: none;
+}
+
+.sidebar li {
+  text-align: center;
+  padding-top: 100px;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #fff;
+  font-size: xx-large;
+}
+
+.sidebar .active {
+  color: #be4417;
+}
+
+.nav-icon {
+  position: absolute;
+  cursor: pointer;
+  height: 26px;
+  width: 28px;
+  top: 20px;
+  right: 10px;
+}
+
+.nav-icon .nav-part {
+  position: absolute;
+  width: 26px;
+  height: 3px;
+  background: #fff;
+}
+
+.nav-icon .nav-part::before {
+  position: absolute;
+  width: 26px;
+  height: 3px;
+  content: '';
+  background: #fff;
+  top: 8px;
+}
+
+.nav-icon .nav-part::after {
+  position: absolute;
+  width: 26px;
+  height: 3px;
+  content: '';
+  background: #fff;
+  top: -8px;
+}
+
+input[type="checkbox"]:checked ~ .sidebar {
+  -webkit-transform: translateX(50px);
+          transform: translateX(50px);
+}
+/*# sourceMappingURL=main.css.map */

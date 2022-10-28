@@ -1,0 +1,70 @@
+@import 'var', 'mixin';
+
+body{
+    background-color: rgb(75, 75, 75)
+}
+
+.sidebar{
+    background-color: #000;
+    height: 80vh;
+    width: 600px;
+    position: relative;
+    margin-top: 30px;
+    left: 50px;
+
+    transform: translateX(0px);
+    transition: transform 0.5s ease-in-out;
+    
+    ul{
+        list-style-type: none;
+    }
+    li{
+        text-align: center;
+        padding-top: 100px;
+    }
+    a{
+        text-decoration: none;
+        color: $navcolor;
+        font-size:xx-large
+    }
+
+    .active{
+        color: rgb(190, 68, 23);
+    }
+}
+
+.nav-icon{
+    position: absolute;
+    cursor: pointer;
+    height: 26px;
+    width: 28px;
+    top: 20px;
+    right: 10px;
+
+    .nav-part{
+        position: absolute;
+        width: 26px;
+        height: 3px;
+        background: $navcolor;
+    }
+    .nav-part::before{
+        position: absolute;
+        width: 26px;
+        height: 3px;
+        content: '';
+        background: $navcolor;
+        top: 8px;
+    }
+    .nav-part::after{
+        position: absolute;
+        width: 26px;
+        height: 3px;
+        content: '';
+        background: $navcolor;
+        top: -8px;
+    }
+}
+
+input[type="checkbox"]:checked ~ .sidebar{
+    transform: translateX(50px);
+}
